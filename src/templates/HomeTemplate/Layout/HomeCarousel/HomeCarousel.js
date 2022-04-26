@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Carousel } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllMovieBannersAction } from '../../../../redux/actions/MovieManageAction';
 const contentStyle = {
     height: '400px',
     color: '#fff',
@@ -7,23 +9,27 @@ const contentStyle = {
     textAlign: 'center',
     background: '#364d79',
 };
+
 export default function HomeCarousel() {
-    return (
-        <Carousel effect="fade" style={{ position: 'relative', zIndex: 1 }}>
-            <div>
+    const { arrMovieBanners } = useSelector(rootReducer => rootReducer.MovieManageReducer)
+    const dispatch = useDispatch();
+    useEffect(() => {
+        const action = getAllMovieBannersAction();
+        dispatch(action);
+        console.log(arrMovieBanners, 'banner');
+    }, [])
+    const renderAllMovieBanners = () => {
+        return arrMovieBanners.map((banner, index) => {
+            return <div>
                 <div style={contentStyle}>
-                    <img src='https://picsum.photos/1000' className="w-full" />
+                    <img index={index} src={banner.hinhAnh} className="w-full h-full object-fill" />
                 </div>
             </div>
-            <div>
-                <div style={contentStyle}>2</div>
-            </div>
-            <div>
-                <div style={contentStyle}>3</div>
-            </div>
-            <div>
-                <div style={contentStyle}>4</div>
-            </div>
+        })
+    }
+    return (
+        <Carousel effect="fade" style={{ position: 'relative', zIndex: 1 }}>
+            {renderAllMovieBanners()}
         </Carousel>
     )
 }

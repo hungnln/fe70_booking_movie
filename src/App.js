@@ -4,6 +4,10 @@ import { BrowserRouter, Route, Router, Switch } from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 import { HomeTemplate } from './templates/HomeTemplate/HomeTemplate';
 import Home from './page/Home/Home';
+import Contact from './page/Contact/Contact';
+import News from './page/News/News';
+import Login from './page/Login/Login';
+import Register from './page/Register/Register';
 // import { history } from './util/setting'
 export const history = createBrowserHistory();
 function App() {
@@ -11,6 +15,11 @@ function App() {
     <Router history={history}>
       <Switch>
         <HomeTemplate path="/" exact Component={Home} />
+        <HomeTemplate path="/contact" exact Component={Contact} />
+        <HomeTemplate path="/news" exact Component={News} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" exact component={Register} />
+        <HomeTemplate path="/home" exact Component={Home} />
       </Switch>
 
     </Router>

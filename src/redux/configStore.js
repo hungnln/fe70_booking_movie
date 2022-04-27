@@ -1,9 +1,13 @@
 import { applyMiddleware, combineReducers, createStore, compose } from 'redux';
 import reduxThunk from 'redux-thunk'
 import MovieManageReducer from './Reducers/MovieManageReducer';
+import ShowTimeManageReducer from './Reducers/ShowTimeManageReducer';
+import TheaterManageReducer from './Reducers/TheaterManageReducer';
 const rootReducer = combineReducers({
     //Nơi chứa các state của ứng dụng
     MovieManageReducer,
+    TheaterManageReducer,
+    ShowTimeManageReducer,
 
 });
 let middleWare = applyMiddleware(reduxThunk)

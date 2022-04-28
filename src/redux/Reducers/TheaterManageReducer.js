@@ -3,7 +3,6 @@ import { GET_ALL_THEATER, GET_ALL_THEATER_BY_BRAND } from "../actions/types/Thea
 const initialState = {
     arrTheater: [],
     arrTheaterByBrand: []
-
 }
 
 export default (state = initialState, action) => {

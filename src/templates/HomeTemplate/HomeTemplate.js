@@ -13,7 +13,7 @@ export const HomeTemplate = (props) => {
                 <Header  {...propsRoute} />
                 <HomeCarousel />
                 <Component {...propsRoute} />
-                <Footer />
+                <Footer {...propsRoute} />
             </Fragment >
         }} />
 }

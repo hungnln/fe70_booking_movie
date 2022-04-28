@@ -8,7 +8,8 @@ import Contact from './page/Contact/Contact';
 import News from './page/News/News';
 import Login from './page/Login/Login';
 import Register from './page/Register/Register';
-// import { history } from './util/setting'
+import Detail from './page/Detail/Detail';
+
 export const history = createBrowserHistory();
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/register" exact component={Register} />
         <HomeTemplate path="/home" exact Component={Home} />
+        <HomeTemplate path="/detail/:id" exact Component={Detail} />
       </Switch>
 
     </Router>

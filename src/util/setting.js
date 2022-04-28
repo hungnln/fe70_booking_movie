@@ -9,7 +9,7 @@ export const MANHOM = 'GP01'
 export const USER_LOGIN = 'userLogin'
 export const ACCESSTOKEN = 'accessToken'
 //Giúp chuyển hướng trang của route
-export const history = createBrowserHistory()
+// export const history = createBrowserHistory()
 
 //config axios
 export const http = axios.create({

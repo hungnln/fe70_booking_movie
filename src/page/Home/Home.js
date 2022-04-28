@@ -12,6 +12,7 @@ export default function Home() {
     useEffect(() => {
         const action = getAllMovieAction();
         dispatch(action);
+        console.log('arrMovie1',arrMovies);
     }, [])
     const renderAllMovies = () => {
         return arrMovies.map((movie, index) => {
@@ -35,6 +36,8 @@ export default function Home() {
     const renderAllTheater = () => {
 
     }
+    console.log('arrMovie2',arrMovies);
+
     return (
         <>
             <Tabs defaultActiveKey="1" type="card" size={size}>

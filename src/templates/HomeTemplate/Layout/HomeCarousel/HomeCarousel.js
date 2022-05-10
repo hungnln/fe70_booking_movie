@@ -3,7 +3,7 @@ import { Carousel } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllMovieBannersAction } from '../../../../redux/actions/MovieManageAction';
 const contentStyle = {
-    height: '400px',
+    height: '100vh',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',

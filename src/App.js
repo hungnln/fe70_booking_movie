@@ -9,6 +9,7 @@ import News from './page/News/News';
 import Login from './page/Login/Login';
 import Register from './page/Register/Register';
 import Detail from './page/Detail/Detail';
+import Checkout from './page/Checkout/Checkout';
 
 export const history = createBrowserHistory();
 function App() {
@@ -22,6 +23,8 @@ function App() {
         <Route path="/register" exact component={Register} />
         <HomeTemplate path="/home" exact Component={Home} />
         <HomeTemplate path="/detail/:id" exact Component={Detail} />
+        <HomeTemplate path="/ticketroom/:id" exact Component={Checkout} />
+
       </Switch>
 
     </Router>

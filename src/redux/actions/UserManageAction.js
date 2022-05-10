@@ -1,6 +1,6 @@
 import { history } from "../../App"
-import { http, SUCCESS, WARNING } from "../../util/setting"
-import { LOGIN } from "./types/UserManageType"
+import { ERROR, http, SUCCESS, WARNING } from "../../util/setting"
+import { GET_USER_INFORMATION, LOGIN, SET_USER_INFORMATION } from "./types/UserManageType"
 import swal from 'sweetalert';
 import { message } from "../../util/swal";
 
@@ -30,6 +30,38 @@ export const registerAction = (information) => {
             }
         } catch (error) {
             message(error.response.data.content, WARNING)
+        }
+    }
+}
+export const getUserInformation = () => {
+    return async dispatch => {
+        try {
+            let result = await http.post('/api/QuanLyNguoiDung/ThongTinTaiKhoan')
+            if (result.data.statusCode === 200) {
+                dispatch({
+                    type: GET_USER_INFORMATION,
+                    userInformation: result.data.content
+                })
+                console.log('infor', result.data.content);
+            }
+        } catch (error) {
+            message(error.response.data.content, ERROR)
+        }
+    }
+}
+export const setUserInformation = (information) => {
+    return async dispatch => {
+        try {
+            let result = await http.put('/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung',information)
+            if (result.data.statusCode === 200) {
+                dispatch({
+                    type: SET_USER_INFORMATION,
+                    userInformation: result.data.content
+                })
+                console.log('infor', result.data.content);
+            }
+        } catch (error) {
+            message(error.response.data.content, ERROR)
         }
     }
 }

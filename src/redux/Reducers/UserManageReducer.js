@@ -1,5 +1,5 @@
 import { ACCESSTOKEN, USER_LOGIN } from "../../util/setting";
-import { LOGIN, SET_USER_INFORMATION } from "../actions/types/UserManageType";
+import { GET_USER_INFORMATION, LOGIN, SET_USER_INFORMATION } from "../actions/types/UserManageType";
 
 let user = {};
 if (localStorage.getItem(USER_LOGIN)) {
@@ -20,6 +20,10 @@ export default (state = initialState, action) => {
             localStorage.setItem(ACCESSTOKEN, userInformation.accessToken);
             return { ...state, userLogin: userInformation }
         case SET_USER_INFORMATION: {
+            state.userInformation = action.userInformation
+            return { ...state }
+        }
+        case GET_USER_INFORMATION: {
             state.userInformation = action.userInformation
             return { ...state }
         }

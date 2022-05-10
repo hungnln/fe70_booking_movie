@@ -10,6 +10,7 @@ import Login from './page/Login/Login';
 import Register from './page/Register/Register';
 import Detail from './page/Detail/Detail';
 import Checkout from './page/Checkout/Checkout';
+import Profile from './page/Profile/Profile';
 
 export const history = createBrowserHistory();
 function App() {
@@ -24,7 +25,7 @@ function App() {
         <HomeTemplate path="/home" exact Component={Home} />
         <HomeTemplate path="/detail/:id" exact Component={Detail} />
         <HomeTemplate path="/ticketroom/:id" exact Component={Checkout} />
-
+        <HomeTemplate path="/profile" exact Component={Profile} />
       </Switch>
 
     </Router>

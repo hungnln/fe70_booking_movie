@@ -37,14 +37,15 @@ export default function Register(props) {
             })
         },
         onSubmit: (values) => {
-            Object.entries(values).map(item => {
-                if (_.isEmpty(item[1])) {
-                    // setFormMessage(
-                    //     ...FormMessage, [item[0]] = 'Please fill ' + item[0]
-                    // )
+            
+            // Object.entries(values).map(item => {
+            //     if (_.isEmpty(item[1])) {
+            //         // setFormMessage(
+            //         //     ...FormMessage, [item[0]] = 'Please fill ' + item[0]
+            //         // )
 
-                }
-            })
+            //     }
+            // })
 
             const action = registerAction(values);
             dispatch(action);

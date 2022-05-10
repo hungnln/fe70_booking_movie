@@ -11,6 +11,10 @@ export const ACCESSTOKEN = 'accessToken'
 //Giúp chuyển hướng trang của route
 // export const history = createBrowserHistory()
 
+
+export const SUCCESS = 'success'
+export const ERROR = 'error'
+export const WARNING = 'warning'
 //config axios
 export const http = axios.create({
     baseURL: DOMAIN,

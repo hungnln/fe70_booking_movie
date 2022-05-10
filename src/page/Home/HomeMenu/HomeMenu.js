@@ -4,6 +4,7 @@ import { getAllTheaterAction, getAllTheaterByBrandAction, getAllTheaterByBrandAn
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import moment from 'moment';
+import { history } from '../../../App';
 const { TabPane } = Tabs;
 const tabPosition = 'left';
 export default function HomeMenu(props) {
@@ -40,7 +41,7 @@ export default function HomeMenu(props) {
                                                         <img style={{ height: 75, width: 75 }} src={film.hinhAnh} alt={film.tenPhim} onError={(e) => { e.target.onerror = null; e.target.src = "https://picsum.photos/75/75" }} />
 
                                                         <div className="ml-2">
-                                                            <h1 className="text-2xl text-green-700" >{film.tenPhim}</h1>
+                                                            <div onClick={() => { history.push(`/detail/${film.maPhim}`) }} className="text-2xl text-green-700" >{film.tenPhim}</div>
                                                             <p>{theaterCluster.diaChi}</p>
                                                             <div className="grid grid-cols-6 gap-6">
                                                                 {film.lstLichChieuTheoPhim?.slice(0, 12).map((showTime, index) => {
